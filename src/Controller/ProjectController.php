@@ -106,6 +106,7 @@ class ProjectController extends AbstractController
      */
     public function delete(ManagerRegistry $doctrine, int $id): Response
     {
+        
         $entityManager = $doctrine->getManager();
         $project = $entityManager->getRepository(Project::class)->find($id);
 
@@ -118,4 +119,5 @@ class ProjectController extends AbstractController
 
         return $this->json('Deleted a project successfully with id ' . $id);
     }
+
 }
